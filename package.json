@@ -1,0 +1,14 @@
+{
+  "name": "match",
+  "version": "1.0.0",
+  "description": "VanillaJS Functional Pattern Matching",
+  "main": "src/index.js",
+  "author": "ephetic <bpcleary@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "tape": "^4.6.3"
+  },
+  "scripts": {
+    "tests": "tape tests/**/*.js"
+  }
+}
