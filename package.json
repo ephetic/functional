@@ -6,9 +6,11 @@
   "author": "ephetic <bpcleary@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "lodash": "^4.17.4",
     "tape": "^4.6.3"
   },
   "scripts": {
-    "tests": "tape tests/**/*.js"
-  }
+    "tests": "tape tests/**/*.js || exit 0"
+  },
+  "dependencies": {}
 }
