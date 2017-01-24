@@ -1,5 +1,5 @@
 {
-  "name": "match",
+  "name": "functional-pattern-matching",
   "version": "1.0.0",
   "description": "Vanilla ES6 Functional Pattern Matching",
   "main": "src/index.js",
