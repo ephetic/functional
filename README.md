@@ -13,6 +13,7 @@ yarn add --save ephetic/functional-pattern-matching
 ## Examples
 ```
 import m from 'functional-pattern-matching'
+```
 
 ### Match on constants or predicate functions
 ```
