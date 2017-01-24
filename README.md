@@ -17,19 +17,19 @@ import m from 'functional-pattern-matching'
 
 ### Match on constants or predicate functions
 ```
-const isHi = match(['hi', true])
+const isHi = m(['hi', true])
 
 console.log(isHi('hi'))     // true
 console.log(isHi('hello'))  // undefined
 
 const fact = m(
   [1, 1],
-  [match, n => n * fact(n-1)]
+  [m, n => n * fact(n-1)]
 )
 
 const fibo = m(
   [n => n <= 2, 1],
-  [match, n => fibo(n-1) + fibo(n-2)]
+  [m, n => fibo(n-1) + fibo(n-2)]
 )
 ```
 
