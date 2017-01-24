@@ -1,7 +1,7 @@
 {
   "name": "match",
   "version": "1.0.0",
-  "description": "VanillaJS Functional Pattern Matching",
+  "description": "Vanilla ES6 Functional Pattern Matching",
   "main": "src/index.js",
   "author": "ephetic <bpcleary@gmail.com>",
   "license": "MIT",
