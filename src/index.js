@@ -1,5 +1,5 @@
 module.exports = function match(...patterns){
-  return function(...args) {
+  return function M(...args) {
     for (let [cond, _fn] of patterns) {
       const fn = typeof _fn == 'function' ? _fn : () => _fn
       if (cond === match)                 cond = () => true
