@@ -1,8 +1,8 @@
-module.exports = function match(...patterns){
+const matcher = (...patterns) => {
   return function M(...args) {
     for (let [cond, _fn] of patterns) {
       const fn = typeof _fn == 'function' ? _fn : () => _fn
-      if (cond === match)                 cond = () => true
+      if (cond === matcher)                 cond = () => true
       else if ('function' == typeof cond) cond = cond(...args)
       else if (Array.isArray(cond))       cond = eq(cond, args)
       else                                cond = eq([cond], args)
@@ -10,7 +10,7 @@ module.exports = function match(...patterns){
     }
   }
   function eq(cond,val) {
-    if (cond === match)   return true
+    if (cond === matcher) return true
     if (cond === val)     return true
     if (cond === val.constructor) return true
     if (cond instanceof RegExp)   return cond.test(val)
@@ -24,3 +24,16 @@ module.exports = function match(...patterns){
   }
 }
 
+const partial = (fn, ...parts) => (...args) => {
+  let params = Array(parts.length)
+  let [pix, aix] = [0, 0]
+  while (pix < parts.length) {
+    let part = parts[pix]
+    part = part === partial ? args[aix++] : part
+    params[pix++] = part
+  }
+  params = params.concat(args.slice(aix))
+  return fn(...params)
+}
+
+module.exports = {matcher, partial}

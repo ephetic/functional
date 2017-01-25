@@ -1,7 +1,7 @@
 {
-  "name": "functional-pattern-matching",
+  "name": "functional",
   "version": "1.0.0",
-  "description": "Vanilla ES6 Functional Pattern Matching",
+  "description": "ES6 functional helpers",
   "main": "src/index.js",
   "author": "ephetic <bpcleary@gmail.com>",
   "license": "MIT",
