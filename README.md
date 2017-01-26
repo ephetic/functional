@@ -13,7 +13,7 @@ The pattern wildcard is the function itself (and can be aliased to any symbol yo
 
 ### Examples
 ```
-import { matcher as m } from 'functional-pattern-matching'
+import { matcher as m } from 'functional'
 ```
 
 #### Match on constants or predicate functions
