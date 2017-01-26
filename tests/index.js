@@ -67,6 +67,15 @@ tape('Match on given object keys', t => {
   t.end()
 })
 
+tape.only('Match contracts', t => {
+  const m = matcher
+  const Integer = n => n === (n|0)
+  const int2 = m([[Integer, Integer], true], [m, false])
+  t.ok(int2(2,3))
+  t.notOk(int2('hi'))
+  t.end()
+})
+
 tape('Partially apply arguments', t => {
   const add = (a,b) => a + b
   t.equal(3, partial(add)(1,2), '0 bound arguments')

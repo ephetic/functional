@@ -14,6 +14,7 @@ const matcher = (...patterns) => {
     if (cond === val)     return true
     if (cond === val.constructor) return true
     if (cond instanceof RegExp)   return cond.test(val)
+    if (typeof cond === 'function') return cond(val)
     if (typeof cond !== 'object') return false
 
     for (let key of Object.keys(cond)) {
