@@ -34,6 +34,23 @@ const fibo = m(
 )
 ```
 
+### Type/contract checking example
+```
+const t = (types, fn) => 
+  process.env.NODE_ENV == 'production' 
+  ? fn 
+  : m([types, fn], 
+      [m, (...args) => {throw `Type Check error: [${args}] doesn't match [${types}].`}])
+
+const Integer = n => n === (n|0)
+const addi = t([Integer, Integer], (a,b) => a + b)
+
+const NonnegativeInteger = n => Integer(n) && n >= 0
+const powish = t([Number, NonnegativeInteger], (b, e) => e > 0 ? b * pow(b, e - 1) : 1)
+console.log(powish(2.2,3)) // works
+console.log(powish(2,-3))  // throws
+```
+
 #### Match with RegExp
 ```
 const isLikeHi = m([/.*hi.*/, s => `${s} is close enough`])
