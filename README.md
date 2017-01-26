@@ -6,7 +6,7 @@ yarn add --save ephetic/functional
 ```
 
 ## Erlang-inspired pattern matching
-Patterns are checked in order, stopping with the first match.  If no patterns match, the generated function will return `undefined` when called.
+Patterns are checked in order, stopping with the first match.  If no patterns match, the generated function will return `undefined`.
 
 The pattern wildcard is the function itself (and can be aliased to any symbol you prefer).
 
@@ -34,7 +34,7 @@ const fibo = m(
 )
 ```
 
-### Type/contract checking example
+#### Type/contract checking example
 ```
 const t = (types, fn) => 
   process.env.NODE_ENV == 'production' 
