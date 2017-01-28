@@ -2,7 +2,7 @@
 
 ## Installation
 ```
-yarn add ephetic/functional
+yarn add @ephetic/functional
 ```
 
 ## Erlang-inspired pattern matching
