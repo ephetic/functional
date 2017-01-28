@@ -10,14 +10,14 @@ const matcher = (...patterns) => {
       if(cond) return fn(...args)
     }
   }
-  function eq(cond,val,shape=false) {
+  function eq(cond,val) {
     if (cond === matcher) return true
     if (cond === val)     return true
     if (cond === val.constructor) return true
     if (cond instanceof RegExp)   return cond.test(val)
     if (typeof cond === 'function') return cond(val)
     if (typeof cond !== 'object') return false
-    if (Array.isArray(cond) && Array.isArray(val) && cond.length != val.length) return false
+    if (Array.isArray(cond) && (!Array.isArray(val) || cond.length != val.length)) return false
     
     for (let key of Object.keys(cond)) {
       if (!val.hasOwnProperty(key)) return false
