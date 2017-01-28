@@ -47,10 +47,12 @@ tape('Match with RegExp', t => {
 
 tape('Match on argument types, values, and don\'t-cares', t => {
   const secondIsNumber = matcher(
+    [[], () => `zero args`],
     [[matcher, Number], (a,b) => `${b} is a Number`],
     [matcher, (a,b) => `${b} is not a Number`]
   )
 
+  t.equal(secondIsNumber(), 'zero args', 'Recognizes zero args')
   t.equal(secondIsNumber('asdf', 2), '2 is a Number', `Second arg is Number`)
   t.equal(secondIsNumber(2, 'asdf'), 'asdf is not a Number', `Second arg is not Number`)
   t.end()
@@ -67,7 +69,7 @@ tape('Match on given object keys', t => {
   t.end()
 })
 
-tape.only('Match contracts', t => {
+tape('Match contracts', t => {
   const m = matcher
   const Integer = n => n === (n|0)
   const int2 = m([[Integer, Integer], true], [m, false])
