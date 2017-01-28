@@ -10,7 +10,7 @@
     "tape": "^4.6.3"
   },
   "scripts": {
-    "tests": "tape tests/**/*.js || exit 0"
+    "test": "tape test/**/*.js || exit 0"
   },
   "dependencies": {}
 }
