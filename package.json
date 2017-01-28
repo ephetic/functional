@@ -1,6 +1,6 @@
 {
   "name": "@ephetic/functional",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "ES6 functional helpers",
   "main": "src/index.js",
   "author": "ephetic <bpcleary@gmail.com>",
