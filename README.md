@@ -68,7 +68,7 @@ secondIsNumber(2, 'asdf')   // asdf is not a Number
 ```
 Note: 
 - `Number` here is the Number constructor which returns falsy `NaN` for anything that doesn't parse as a number.  Contructor type-checking does not currently work (it can cause false positives when called internally as a predicate).
-- since an array literal condition is used to represent the arguments list, test arrays as object literals with index keys `{0: m, 1: m, length: 2}` (include `length` for exact match).
+- To test arrays, wrap them in an array to indicate an argument or use an object literal with index keys; e.g. `[[m, m]]` or `{0: m, 1: m, length: 2}` (include `length` for exact match).
 
 #### Match on given object shape
 ```
