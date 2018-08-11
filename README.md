@@ -66,7 +66,7 @@ const secondIsNumber = m(
 secondIsNumber('asdf', 2)   // 2 is a Number
 secondIsNumber(2, 'asdf')   // asdf is not a Number
 ```
-Note: since an array literal condition is used to represent the arguments list, to test against an actual array wrap it in a dummy object.
+Note: since an array literal condition is used to represent the arguments list, test arrays as object literals with index keys `{0: m, 1: m, length: 2}` (include `length` for exact match).
 
 #### Match on given object shape
 ```
