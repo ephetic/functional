@@ -56,7 +56,7 @@ console.log(powish(2,-3))  // throws
 const isLikeHi = m([/.*hi.*/, s => `${s} is close enough`])
 ```
 
-#### Match on argument types, values, and don't-cares 
+#### Match on argument contracts, values, and don't-cares 
 ```
 const secondIsNumber = m(
   [ [m, Number], (a,b) => console.log(`${b} is a Number`)],
@@ -66,7 +66,9 @@ const secondIsNumber = m(
 secondIsNumber('asdf', 2)   // 2 is a Number
 secondIsNumber(2, 'asdf')   // asdf is not a Number
 ```
-Note: since an array literal condition is used to represent the arguments list, test arrays as object literals with index keys `{0: m, 1: m, length: 2}` (include `length` for exact match).
+Note: 
+- `Number` here is the Number constructor which returns falsy `NaN` for anything that doesn't parse as a number.  Contructor type-checking does not currently work (it can cause false positives when called internally as a predicate).
+- since an array literal condition is used to represent the arguments list, test arrays as object literals with index keys `{0: m, 1: m, length: 2}` (include `length` for exact match).
 
 #### Match on given object shape
 ```
